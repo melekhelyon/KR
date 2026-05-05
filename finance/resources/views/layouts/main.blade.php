@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    <title>ФинУчёт</title>
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @vite(['resources/js/app.js'])

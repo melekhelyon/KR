@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Main from './App.vue'
+import Main from './Main.vue'
 import Register from "./Auth/Register.vue";
 import Login from "./Auth/Login.vue";
 import UserMain from './User/Index.vue';
@@ -77,16 +77,16 @@ const router = createRouter({
 router.beforeEach((to, from ) => {
     const token = localStorage.getItem('token')
 
-    if (!token) {
-        if (to.name !== 'app.login' && to.name !== 'app.register') {
-            return { name: 'app.login' };
-        } 
-    }
-
     if (token) {
-        if (to.name === 'app.login' || to.name === 'app.register') {
+        if (to.name === 'app.register' || to.name === 'app.login') {
             return { name: 'user.main' };
         } 
+    }else{
+        if (to.name === 'app.main' || to.name === 'app.register' || to.name === 'app.login'){
+            return;
+        }else{
+            return { name: 'app.main' };
+        }
     }
 
     return true;

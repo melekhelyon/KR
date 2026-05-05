@@ -374,8 +374,8 @@ export default {
             const transferAmount = parseFloat(this.amount);
             
             axios.post('/api/operations/transfer', {
-                from_account_id: this.account_id,
-                to_account_id: this.transfer_account_id,
+                account_id: this.account_id,
+                transfer_account_id: this.transfer_account_id,
                 amount: transferAmount,
                 operation_date: this.operation_date,
                 description: this.description || 'Перевод между счетами'

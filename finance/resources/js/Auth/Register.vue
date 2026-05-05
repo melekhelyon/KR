@@ -11,10 +11,10 @@
             <div class="form">
                 <p class="desc3">NAME</p>
                 <input type="name" class="inputbox-name" v-model="name" placeholder="Иван"></input>
-                <p class="desc8">Как к вам обращаться в системе.</p>
+                <p class="desc8">Ваше имя.</p>
                 <p class="desc4">SURNAME</p>
                 <input type="surname" class="inputbox-surname" v-model="last_name" placeholder="Иванов"></input>
-                <p class="desc9">Уникальный идентификатор для входа.</p>
+                <p class="desc9">Ваша фамилия.</p>
                 <p class="desc5">SECURITY KEY</p>
                 <input type="password" class="inputbox-pass" v-model="password" placeholder="••••••••"></input>
                 <p class="desc6">EMAIL ADDRESS</p>

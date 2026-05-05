@@ -61,50 +61,57 @@ class OperationsController extends Controller
     
     public function transfer(Request $request) {
         $data = $request->validate([
-            'from_account_id' => 'required|exists:accounts,id',
-            'to_account_id' => 'required|exists:accounts,id|different:from_account_id',
-            'amount' => 'required|numeric|min:0.01',
-            'operation_date' => 'required|date',
-            'description' => 'nullable|string|max:255',
+            'account_id'          => 'required|exists:accounts,id',
+            'transfer_account_id' => 'required|exists:accounts,id|different:account_id',
+            'amount'              => 'required|numeric|min:0.01',
+            'operation_date'      => 'required|date',
+            'description'         => 'nullable|string|max:255',
         ]);
 
         return DB::transaction(function () use ($request, $data) {
-            $fromAccount = $request->user()->accounts()->findOrFail($data['from_account_id']);
-            $toAccount = $request->user()->accounts()->findOrFail($data['to_account_id']);
+            $fromAccount = $request->user()->accounts()->findOrFail($data['account_id']);
+            $toAccount = $request->user()->accounts()->findOrFail($data['transfer_account_id']);
             
             $amount = abs($data['amount']);
             
+            // Проверка достаточности средств
             if ($fromAccount->balance < $amount) {
                 return response()->json(['message' => 'Недостаточно средств на счете'], 400);
             }
             
+            // Создаем операцию списания
             $fromOperation = $request->user()->operations()->create([
-                'account_id' => $fromAccount->id,
+                'account_id'          => $fromAccount->id,
                 'transfer_account_id' => $toAccount->id,
-                'amount' => -$amount,
-                'description' => $data['description'] ?? 'Перевод на счет ' . $toAccount->name,
-                'operation_date' => $data['operation_date'],
-                'operation_time' => now()->format('H:i:s'),
-                'status' => 'accepted'
+                'amount'              => -$amount,
+                'description'         => $data['description'] ?? 'Перевод на счет ' . $toAccount->name,
+                'operation_date'      => $data['operation_date'],
+                'operation_time'      => now()->format('H:i:s'),
+                'status'              => 'accepted'
             ]);
             
+            // Создаем операцию зачисления
             $toOperation = $request->user()->operations()->create([
-                'account_id' => $toAccount->id,
+                'account_id'          => $toAccount->id,
                 'transfer_account_id' => $fromAccount->id,
-                'amount' => $amount,
-                'description' => $data['description'] ?? 'Перевод со счета ' . $fromAccount->name,
-                'operation_date' => $data['operation_date'],
-                'operation_time' => now()->format('H:i:s'),
-                'status' => 'accepted'
+                'amount'              => $amount,
+                'description'         => $data['description'] ?? 'Перевод со счета ' . $fromAccount->name,
+                'operation_date'      => $data['operation_date'],
+                'operation_time'      => now()->format('H:i:s'),
+                'status'              => 'accepted'
             ]);
             
-            $fromAccount->balance -= $amount;
-            $fromAccount->save();
+            // Обновляем балансы
+            $fromAccount->decrement('balance', $amount);
+            $toAccount->increment('balance', $amount);
             
-            $toAccount->balance += $amount;
-            $toAccount->save();
+            // Загружаем связанные данные для ответа
+            $fromOperation->load('account');
+            $toOperation->load('account');
             
             return response()->json([
+                'success' => true,
+                'message' => 'Перевод выполнен успешно',
                 'from_operation' => $fromOperation,
                 'to_operation' => $toOperation
             ], 201);

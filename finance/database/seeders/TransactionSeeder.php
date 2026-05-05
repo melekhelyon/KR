@@ -52,8 +52,6 @@ class TransactionSeeder extends Seeder
                     'description' => $description,
                     'status' => 'accepted',
                     'transfer_account_id' => null,
-                    'created_at' => now()->subDays(rand(0, 30)),
-                    'updated_at' => now(),
                 ];
             }
             
@@ -74,8 +72,6 @@ class TransactionSeeder extends Seeder
                         'description' => 'Перевод на счет ' . $toAccount->name,
                         'status' => 'accepted',
                         'transfer_account_id' => $toAccount->id,
-                        'created_at' => now()->subDays(rand(0, 30)),
-                        'updated_at' => now(),
                     ];
                 }
             }
