@@ -52,5 +52,6 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::put('/users/{id}/role', [AdminController::class, 'updateUserRole']);
         Route::delete('/users/{id}', [AdminController::class, 'deleteUser']);
         Route::get('/roles', [AdminController::class, 'roles']);
+        Route::get('/export-csv', [AdminController::class, 'exportCsv']);
     });
 });

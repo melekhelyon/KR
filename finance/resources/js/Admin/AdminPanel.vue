@@ -2,6 +2,7 @@
     <div>
         <div class="admin-panel">
             <h1 class="title">Админ панель</h1>
+            
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-icon">👥</div>
@@ -34,6 +35,7 @@
                     <div class="stat-label">Общий баланс</div>
                 </div>
             </div>
+            
             <div class="charts-row">
                 <div class="chart-box">
                     <h3>Новые пользователи</h3>
@@ -44,11 +46,35 @@
                     <apexchart type="line" :options="operationsChartOptions" :series="operationsChartSeries" height="250" />
                 </div>
             </div>
+            
             <div class="users-section">
-                <h2>Управление пользователями</h2>
+                <div class="section-header">
+                    <h2>Управление пользователями</h2>
+                    <div class="export-controls">
+                        <div class="date-filters">
+                            <input 
+                                type="date" 
+                                class="date-input" 
+                                v-model="exportFromDate"
+                                placeholder="Дата от"
+                            >
+                            <input 
+                                type="date" 
+                                class="date-input" 
+                                v-model="exportToDate"
+                                placeholder="Дата до"
+                            >
+                        </div>
+                        <button class="export-btn" @click="exportReport">
+                            📊 Скачать отчёт
+                        </button>
+                    </div>
+                </div>
+                
                 <div class="filters">
                     <input type="text" class="search-input" v-model="searchQuery" placeholder="Поиск..." @input="searchUsers">
                 </div>
+                
                 <table class="users-table">
                     <thead>
                         <tr>
@@ -122,6 +148,8 @@ export default {
             currentPage: 1,
             totalPages: 1,
             searchTimeout: null,
+            exportFromDate: '',
+            exportToDate: '',
         }
     },
     
@@ -261,6 +289,40 @@ export default {
         
         formatDate(date) {
             return new Date(date).toLocaleDateString('ru-RU');
+        },
+
+        exportReport() {
+            let url = '/api/admin/export-csv';
+            const params = [];
+            
+            if (this.exportFromDate) {
+                params.push(`from_date=${this.exportFromDate}`);
+            }
+            if (this.exportToDate) {
+                params.push(`to_date=${this.exportToDate}`);
+            }
+            if (params.length) {
+                url += '?' + params.join('&');
+            }
+            
+            axios({
+                url: url,
+                method: 'GET',
+                responseType: 'blob',
+            }).then((response) => {
+                const url = window.URL.createObjectURL(new Blob([response.data]));
+                const link = document.createElement('a');
+                link.href = url;
+                link.setAttribute('download', `admin_report_${new Date().toISOString().slice(0,19).replace(/:/g, '-')}.csv`);
+                document.body.appendChild(link);
+                link.click();
+                link.remove();
+                window.URL.revokeObjectURL(url);
+                alert('Отчёт успешно выгружен!');
+            }).catch(error => {
+                console.error('Ошибка экспорта:', error);
+                alert('Ошибка при выгрузке отчёта');
+            });
         }
     }
 }
@@ -343,10 +405,60 @@ export default {
         padding: 24px;
     }
 
+    .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
     .users-section h2 {
         color: #F8FAFC;
         font-family: 'Inter', sans-serif;
-        margin-bottom: 20px;
+        margin: 0;
+    }
+
+    .export-controls {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .date-filters {
+        display: flex;
+        gap: 8px;
+    }
+
+    .date-input {
+        padding: 8px 12px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 13px;
+        border-radius: 8px;
+        background: rgba(22, 33, 60, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        outline: none;
+        color: white;
+        width: 140px;
+    }
+
+    .export-btn {
+        padding: 8px 16px;
+        background: linear-gradient(135deg, #00D4FF 0%, #BE5EED 100%);
+        border: none;
+        border-radius: 8px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        font-size: 13px;
+        color: white;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .export-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
     }
 
     .filters {
