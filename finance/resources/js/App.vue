@@ -12,7 +12,9 @@ export default {
 </script>
 
 <style>
-    body{
-        background-color: #05080F;
+    body {
+        background-color: #F8FAFC;
+        margin: 0;
+        padding: 0;
     }
 </style>

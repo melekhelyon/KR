@@ -146,9 +146,8 @@ export default {
 <style scoped>
     @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
     @import url('https://rsms.me/inter/inter.css');
-    .rectangle{
-        background-color: rgba(15, 23, 41, 0.3);
-        backdrop-filter: blur(24px);
+    .rectangle {
+        background-color: white;
         width: 672px;
         height: 762px;
         position: absolute;
@@ -156,12 +155,14 @@ export default {
         left: 50%;
         transform: translate(-50%);
         border-radius: 16px;
+        box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.1);
+        border: 1px solid #E2E8F0;
         z-index: 1;
     }
-    .desc{
+    .desc {
         font-size: 36px;
         font-family: 'Inter', sans-serif;
-        color: #F8FAFC;
+        color: #0F172A;
         font-weight: bold;
         position: absolute;
         top: 134px;
@@ -169,56 +170,56 @@ export default {
         letter-spacing: -2.52px;
         user-select: none
     }
-    .desc2{
+    .desc2 {
         font-size: 16px;
         font-family: 'Inter', sans-serif;
-        color: #94A3B8;
+        color: #475569;
         position: absolute;
         top: 190px;
         left: 56px;
         letter-spacing: -0.32px;
         user-select: none
     }
-    .desc3, .desc4, .desc5, .desc6, .desc7{
+    .desc3, .desc4, .desc5, .desc6, .desc7 {
         font-size: 12px;
         font-family: 'JetBrains Mono', monospace;
-        color: #94A3B8;
+        color: #64748B;
         position: absolute;
         letter-spacing: 0.36px;
         user-select: none
     }
-    .desc3{
+    .desc3 {
         top: -16px;
     }
-    .desc4{
+    .desc4 {
         top: 92px;
     }
-    .desc5{
+    .desc5 {
         top: 200px;
     }
-    .desc6{
+    .desc6 {
         top: 284px;
     }
-    .desc7{
+    .desc7 {
         top: 284px;
         left: 324px;
     }
-    .desc8, .desc9{
+    .desc8, .desc9 {
         font-size: 12px;
         font-family: 'Inter', sans-serif;
-        color: #94A3B8;
+        color: #64748B;
         opacity: 70%;
         position: absolute;
         letter-spacing: -0.32px;
         user-select: none
     }
-    .desc8{
+    .desc8 {
         top: 52px;
     }
-    .desc9{
+    .desc9 {
         top: 160px;
     }
-    .tr-shape{
+    .tr-shape {
         width: 64px;
         height: 64px;
         border-right: 2px solid rgba(0, 212, 255, 0.4);
@@ -229,7 +230,7 @@ export default {
         top: 0px;
         left: 605px;
     }
-    .tl-shape{
+    .tl-shape {
         width: 64px;
         height: 64px;
         border-left: 2px solid rgba(0, 212, 255, 0.4);
@@ -240,7 +241,7 @@ export default {
         top: 0px;
         left: 0px;
     }
-    .br-shape{
+    .br-shape {
         width: 64px;
         height: 64px;
         border-right: 2px solid rgba(0, 212, 255, 0.4);
@@ -251,7 +252,7 @@ export default {
         top: 696px;
         left: 605px;
     }
-    .bl-shape{
+    .bl-shape {
         width: 64px;
         height: 64px;
         border-left: 2px solid rgba(0, 212, 255, 0.4);
@@ -262,7 +263,7 @@ export default {
         top: 696px;
         left: 0px;
     }
-    .dd-shape{
+    .dd-shape {
         width: 64px;
         height: 64px;
         border-right: 3px solid #00D4FF;
@@ -273,67 +274,66 @@ export default {
         top: 2000px;
         left: 605px;
     }
-    .gradient-box{
+    .gradient-box {
         width: 1920px;
         height: 1200px;
-        background: radial-gradient(circle at top, rgba(190, 94, 237, 1) 0%, rgba(190, 94, 237, 0) 50%);
+        background: radial-gradient(circle at top, rgba(190, 94, 237, 0.15) 0%, rgba(190, 94, 237, 0) 50%);
         border-radius: 0 0 100px 100px;
         position: absolute;
         top: 65px;
         left: 50%;
         transform: translate(-50%);
-        opacity: 15%;
     }
-    .form{
+    .form {
         width: 624px;
         height: 464px;
         position: absolute;
         top: 268px;
         left: 24px;
     }
-    .inputbox-name, .inputbox-surname, .inputbox-pass, .inputbox-email, .inputbox-phone{
+    .inputbox-name, .inputbox-surname, .inputbox-pass, .inputbox-email, .inputbox-phone {
         font-family: 'JetBrains Mono', monospace;
         font-size: 14px;
         border-radius: 10px;
-        background: rgba(22, 33, 60, 0.3);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: #F1F5F9;
+        border: 1px solid #E2E8F0;
         outline: none;
         padding-left: 13px;
         letter-spacing: 1.12px;
         box-sizing: border-box;
         position: absolute;
-        color: white;
+        color: #0F172A;
     }
-    .inputbox-name::placeholder, .inputbox-surname::placeholder, .inputbox-pass::placeholder, .inputbox-email::placeholder, .inputbox-phone::placeholder{
-        color: rgba(148, 163, 184, 0.3);
+    .inputbox-name::placeholder, .inputbox-surname::placeholder, .inputbox-pass::placeholder, .inputbox-email::placeholder, .inputbox-phone::placeholder {
+        color: #94A3B8;
         position: absolute;
     }
-    .inputbox-name, .inputbox-surname, .inputbox-pass{
+    .inputbox-name, .inputbox-surname, .inputbox-pass {
         width: 100%;
         height: 36px;
     }
-    .inputbox-name{
+    .inputbox-name {
         top: 24px;
     }
-    .inputbox-surname{
+    .inputbox-surname {
         top: 132px;
     }
-    .inputbox-pass{
+    .inputbox-pass {
         top: 240px;
     }
-    .inputbox-email, .inputbox-phone{
+    .inputbox-email, .inputbox-phone {
         width: 300px;
         height: 36px;
     }
-    .inputbox-email{
+    .inputbox-email {
         left: 0;
         top: 324px;
     }
-    .inputbox-phone{
+    .inputbox-phone {
         left: 324px;
         top: 324px;
     }
-    .register_button{
+    .register_button {
         box-sizing: border-box;
         border: none;
         width: 100%;
@@ -342,22 +342,24 @@ export default {
         top: 408px;
         background: linear-gradient(to right, rgba(0, 212, 255, 1) 0%, rgba(190, 94, 237, 1) 100%);
         border-radius: 10px;
-        box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+        box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
         transition: all 0.1s ease;
         font-size: 18px;
         font-family: 'Inter', sans-serif;
         line-height: 28px;
         letter-spacing: -0.32;
         font-weight: bold;
+        color: white;
+        cursor: pointer;
     }
-    .register_button:active{
-        box-shadow: 0 0 10px rgba(6, 182, 212, 0.3);
+    .register_button:active {
+        box-shadow: 0 2px 10px rgba(0, 212, 255, 0.2);
         transform: translateY(3px);
     }
-    .register_button:hover{
-        box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+    .register_button:hover {
+        box-shadow: 0 6px 20px rgba(0, 212, 255, 0.3);
     }
-    .error-message{
+    .error-message {
         position: absolute;
         top: 370px;
         width: 100%;

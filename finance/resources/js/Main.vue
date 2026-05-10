@@ -48,14 +48,14 @@ export default {
 <style scoped>
     .landing {
         min-height: 100vh;
-        background: #05080F;
+        background: #F8FAFC;
         overflow-x: hidden;
     }
 
     .gradient-bg {
         width: 800px;
         height: 800px;
-        background: radial-gradient(circle, rgba(0, 212, 255, 0.15) 0%, rgba(190, 94, 237, 0) 70%);
+        background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, rgba(190, 94, 237, 0) 70%);
         position: fixed;
         top: -300px;
         right: -200px;
@@ -66,7 +66,7 @@ export default {
     .gradient-bg2 {
         width: 600px;
         height: 600px;
-        background: radial-gradient(circle, rgba(190, 94, 237, 0.1) 0%, rgba(0, 212, 255, 0) 70%);
+        background: radial-gradient(circle, rgba(190, 94, 237, 0.08) 0%, rgba(0, 212, 255, 0) 70%);
         position: fixed;
         bottom: -200px;
         left: -200px;
@@ -85,7 +85,7 @@ export default {
         font-size: 64px;
         font-family: 'Inter', sans-serif;
         font-weight: bold;
-        background: linear-gradient(135deg, #F8FAFC 0%, #94A3B8 100%);
+        background: linear-gradient(135deg, #0F172A 0%, #475569 100%);
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
@@ -96,7 +96,7 @@ export default {
     .subtitle {
         font-size: 18px;
         font-family: 'Inter', sans-serif;
-        color: #94A3B8;
+        color: #475569;
         line-height: 1.6;
         margin-bottom: 40px;
         max-width: 700px;
@@ -115,12 +115,12 @@ export default {
         color: white;
         text-decoration: none;
         transition: all 0.2s ease;
-        box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+        box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
     }
 
     .cta-button:hover {
         transform: translateY(-2px);
-        box-shadow: 0 0 40px rgba(0, 212, 255, 0.5);
+        box-shadow: 0 6px 20px rgba(0, 212, 255, 0.3);
     }
 
     .features {
@@ -135,18 +135,20 @@ export default {
     }
 
     .feature-card {
-        background: rgba(15, 23, 41, 0.6);
+        background: white;
         backdrop-filter: blur(24px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        border: 1px solid #E2E8F0;
         border-radius: 20px;
         padding: 32px 24px;
         text-align: center;
         transition: all 0.2s ease;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
     }
 
     .feature-card:hover {
-        border-color: rgba(0, 212, 255, 0.3);
+        border-color: #00D4FF;
         transform: translateY(-4px);
+        box-shadow: 0 20px 30px -10px rgba(0, 212, 255, 0.15);
     }
 
     .feature-icon {
@@ -158,14 +160,14 @@ export default {
         font-family: 'Inter', sans-serif;
         font-size: 20px;
         font-weight: 600;
-        color: #F8FAFC;
+        color: #0F172A;
         margin-bottom: 12px;
     }
 
     .feature-card p {
         font-family: 'Inter', sans-serif;
         font-size: 14px;
-        color: #94A3B8;
+        color: #64748B;
         line-height: 1.5;
     }
 

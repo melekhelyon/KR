@@ -85,20 +85,21 @@ export default {
     @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
     @import url('https://rsms.me/inter/inter.css');
     .bar {
-        background-color: #05080F;
+        background-color: white;
         width: 100%;
         height: 65px;
         position: fixed;
         top: 0px;
         left: 0px;
         right: 0px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid #E2E8F0;
         z-index: 2;
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 0 208px;
         box-sizing: border-box;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     }
 
     .logo {
@@ -110,7 +111,8 @@ export default {
 
     .logo a {
         text-decoration: none;
-        color: #94A3B8;
+        color: #0F172A;
+        font-weight: bold;
     }
 
     .links-center {
@@ -126,7 +128,7 @@ export default {
 
     .links-center a {
         text-decoration: none;
-        color: #94A3B8;
+        color: #475569;
         font-size: 16px;
         font-weight: 500;
         transition: color 0.2s;
@@ -148,7 +150,7 @@ export default {
 
     .links a {
         text-decoration: none;
-        color: #94A3B8;
+        color: #475569;
         font-size: 14px;
         transition: color 0.2s;
     }
@@ -168,6 +170,7 @@ export default {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        color: #0F172A;
     }
 
     .profile-icon {

@@ -131,23 +131,23 @@ export default {
     .rec {
         width: 800px;
         min-height: 600px;
-        background: rgba(15, 23, 41, 0.6);
-        backdrop-filter: blur(24px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: white;
+        border: 1px solid #E2E8F0;
         border-radius: 24px;
         position: absolute;
         top: 161px;
         left: 50%;
         transform: translateX(-50%);
-        color: white;
+        color: #0F172A;
         padding: 32px;
         box-sizing: border-box;
+        box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.1);
     }
 
     .title {
         font-size: 32px;
         font-family: 'Inter', sans-serif;
-        color: #F8FAFC;
+        color: #0F172A;
         font-weight: bold;
         margin-bottom: 32px;
         letter-spacing: -1px;
@@ -161,15 +161,15 @@ export default {
 
     .section {
         padding: 24px;
-        background: rgba(22, 33, 60, 0.3);
+        background: #F8FAFC;
         border-radius: 16px;
-        border: 1px solid rgba(255, 255, 255, 0.05);
+        border: 1px solid #E2E8F0;
     }
 
     .section-title {
         font-size: 18px;
         font-family: 'Inter', sans-serif;
-        color: #94A3B8;
+        color: #0F172A;
         margin-bottom: 20px;
         font-weight: 600;
     }
@@ -182,7 +182,7 @@ export default {
         display: block;
         font-size: 12px;
         font-family: 'JetBrains Mono', monospace;
-        color: #94A3B8;
+        color: #64748B;
         margin-bottom: 6px;
         text-transform: uppercase;
         letter-spacing: 0.5px;
@@ -194,16 +194,17 @@ export default {
         font-family: 'JetBrains Mono', monospace;
         font-size: 14px;
         border-radius: 10px;
-        background: rgba(22, 33, 60, 0.5);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: white;
+        border: 1px solid #E2E8F0;
         outline: none;
-        color: white;
+        color: #0F172A;
         box-sizing: border-box;
     }
 
     .form-control:disabled {
         opacity: 0.6;
         cursor: not-allowed;
+        background: #F1F5F9;
     }
 
     .save-btn {
@@ -222,14 +223,14 @@ export default {
     }
 
     .save-btn:hover {
-        box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+        box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
     }
 
     .logout-btn {
         width: 100%;
         height: 44px;
-        background: rgba(220, 53, 69, 0.2);
-        border: 1px solid rgba(220, 53, 69, 0.5);
+        background: rgba(220, 53, 69, 0.1);
+        border: 1px solid rgba(220, 53, 69, 0.3);
         border-radius: 10px;
         font-size: 16px;
         font-family: 'Inter', sans-serif;
@@ -240,6 +241,6 @@ export default {
     }
 
     .logout-btn:hover {
-        background: rgba(220, 53, 69, 0.3);
+        background: rgba(220, 53, 69, 0.2);
     }
 </style>

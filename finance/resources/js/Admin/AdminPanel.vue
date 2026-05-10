@@ -338,7 +338,7 @@ export default {
     .title {
         font-size: 36px;
         font-family: 'Inter', sans-serif;
-        color: #F8FAFC;
+        color: #0F172A;
         margin-bottom: 32px;
     }
 
@@ -350,12 +350,12 @@ export default {
     }
 
     .stat-card {
-        background: rgba(15, 23, 41, 0.6);
-        backdrop-filter: blur(24px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: white;
+        border: 1px solid #E2E8F0;
         border-radius: 16px;
         padding: 20px;
         text-align: center;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     }
 
     .stat-icon {
@@ -366,13 +366,13 @@ export default {
     .stat-value {
         font-size: 28px;
         font-family: 'JetBrains Mono', monospace;
-        color: #F8FAFC;
+        color: #0F172A;
         font-weight: bold;
     }
 
     .stat-label {
         font-size: 14px;
-        color: #94A3B8;
+        color: #64748B;
         font-family: 'Inter', sans-serif;
     }
 
@@ -384,25 +384,25 @@ export default {
     }
 
     .chart-box {
-        background: rgba(15, 23, 41, 0.6);
-        backdrop-filter: blur(24px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: white;
+        border: 1px solid #E2E8F0;
         border-radius: 16px;
         padding: 20px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     }
 
     .chart-box h3 {
-        color: #94A3B8;
+        color: #0F172A;
         font-family: 'Inter', sans-serif;
         margin-bottom: 16px;
     }
 
     .users-section {
-        background: rgba(15, 23, 41, 0.6);
-        backdrop-filter: blur(24px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: white;
+        border: 1px solid #E2E8F0;
         border-radius: 16px;
         padding: 24px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     }
 
     .section-header {
@@ -415,7 +415,7 @@ export default {
     }
 
     .users-section h2 {
-        color: #F8FAFC;
+        color: #0F172A;
         font-family: 'Inter', sans-serif;
         margin: 0;
     }
@@ -436,10 +436,10 @@ export default {
         font-family: 'JetBrains Mono', monospace;
         font-size: 13px;
         border-radius: 8px;
-        background: rgba(22, 33, 60, 0.5);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: #F1F5F9;
+        border: 1px solid #E2E8F0;
         outline: none;
-        color: white;
+        color: #0F172A;
         width: 140px;
     }
 
@@ -458,7 +458,7 @@ export default {
 
     .export-btn:hover {
         transform: translateY(-2px);
-        box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+        box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
     }
 
     .filters {
@@ -471,16 +471,16 @@ export default {
         font-family: 'JetBrains Mono', monospace;
         font-size: 14px;
         border-radius: 10px;
-        background: rgba(22, 33, 60, 0.5);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: #F1F5F9;
+        border: 1px solid #E2E8F0;
         outline: none;
-        color: white;
+        color: #0F172A;
     }
 
     .users-table {
         width: 100%;
         border-collapse: collapse;
-        color: #F8FAFC;
+        color: #0F172A;
         font-family: 'Inter', sans-serif;
     }
 
@@ -488,11 +488,11 @@ export default {
     .users-table td {
         padding: 12px;
         text-align: left;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid #E2E8F0;
     }
 
     .users-table th {
-        color: #94A3B8;
+        color: #64748B;
         font-weight: 600;
         font-size: 12px;
         text-transform: uppercase;
@@ -501,16 +501,16 @@ export default {
 
     .role-select {
         padding: 6px 10px;
-        background: rgba(22, 33, 60, 0.5);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: #F1F5F9;
+        border: 1px solid #E2E8F0;
         border-radius: 6px;
-        color: white;
+        color: #0F172A;
         font-family: 'Inter', sans-serif;
     }
 
     .delete-btn {
         background: transparent;
-        border: 1px solid rgba(220, 53, 69, 0.5);
+        border: 1px solid rgba(220, 53, 69, 0.3);
         border-radius: 6px;
         padding: 6px 10px;
         cursor: pointer;
@@ -518,7 +518,7 @@ export default {
     }
 
     .delete-btn:hover:not(:disabled) {
-        background: rgba(220, 53, 69, 0.2);
+        background: rgba(220, 53, 69, 0.1);
     }
 
     .delete-btn:disabled {
@@ -535,11 +535,11 @@ export default {
     }
 
     .pagination button {
-        background: rgba(22, 33, 60, 0.5);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: white;
+        border: 1px solid #E2E8F0;
         border-radius: 8px;
         padding: 8px 16px;
-        color: white;
+        color: #0F172A;
         cursor: pointer;
     }
 

@@ -47,7 +47,7 @@ export default {
 </script>
 
 <style scoped>
-    .rectangle{
+    .rectangle {
         position: absolute;
         top: 161px;
         left: 50%;
@@ -55,45 +55,45 @@ export default {
         width: 1152px;
         height: 538.75px;
         border-radius: 24px;
-        background: rgba(15, 23, 41, 0.6);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(24px);
+        background: white;
+        border: 1px solid #E2E8F0;
+        box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.1);
         overflow: hidden;
     }
-    .form{
+    .form {
         width: 558.83px;
         height: 241px;
         position: absolute;
         left: 536.16px;
         top: 240.75px;
     }
-    .email, .passw{
+    .email, .passw {
         font-family: 'JetBrains Mono', monospace;
         font-size: 14px;
         border-radius: 10px;
-        background: rgba(22, 33, 60, 0.3);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: #F1F5F9;
+        border: 1px solid #E2E8F0;
         outline: none;
         padding-left: 13px;
         letter-spacing: 1.12px;
         box-sizing: border-box;
         position: absolute;
-        color: white;
+        color: #0F172A;
         width: 269.41px;
         height: 36px;
     }
-    .email::placeholder, .passw::placeholder{
-        color: rgba(148, 163, 184, 0.3);
+    .email::placeholder, .passw::placeholder {
+        color: #94A3B8;
         position: absolute;
     }
-    .email{
+    .email {
         top: 22px;
     }
-    .passw{
+    .passw {
         top: 22px;
         left: 289.4px;
     }
-    .login_button{
+    .login_button {
         box-sizing: border-box;
         border: none;
         width: 200px;
@@ -102,41 +102,43 @@ export default {
         top: 197px;
         background: linear-gradient(to right, rgba(0, 212, 255, 1) 0%, rgba(190, 94, 237, 1) 100%);
         border-radius: 10px;
-        box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+        box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
         transition: all 0.1s ease;
         font-size: 18px;
         font-family: 'Inter', sans-serif;
         line-height: 28px;
         letter-spacing: -0.32;
         font-weight: bold;
+        color: white;
+        cursor: pointer;
     }
-    .login_button:active{
-        box-shadow: 0 0 10px rgba(6, 182, 212, 0.3);
+    .login_button:active {
+        box-shadow: 0 2px 10px rgba(0, 212, 255, 0.2);
         transform: translateY(3px);
     }
-    .login_button:hover{
-        box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+    .login_button:hover {
+        box-shadow: 0 6px 20px rgba(0, 212, 255, 0.3);
     }
-    .img{
+    .img {
         position: absolute;
         left: 39px;
         z-index: 1;
         user-select: none
     }
-    .gradient-box{
+    .gradient-box {
         width: 256px;
         height: 256px;
-        background: rgba(0, 212, 255, 0.2);
+        background: rgba(0, 212, 255, 0.15);
         border-radius: 50%;
         position: absolute;
         top: -127px;
         left: 980.33px;
         filter: blur(100px);
     }
-    .gradient-box2{
+    .gradient-box2 {
         width: 320px;
         height: 320px;
-        background: rgba(190, 94, 237, 0.15);
+        background: rgba(190, 94, 237, 0.1);
         border-radius: 50%;
         position: absolute;
         top: 324.42px;
@@ -144,10 +146,10 @@ export default {
         z-index: 0;
         filter: blur(120px);
     }
-    .desc{
+    .desc {
         font-size: 48px;
         font-family: 'Inter', sans-serif;
-        color: #F8FAFC;
+        color: #0F172A;
         font-weight: bold;
         position: absolute;
         top: 57px;
@@ -155,10 +157,10 @@ export default {
         letter-spacing: -3.36px;
         user-select: none
     }
-    .desc2{
+    .desc2 {
         font-size: 18px;
         font-family: 'Inter', sans-serif;
-        color: #94A3B8;
+        color: #475569;
         position: absolute;
         top: 126px;
         left: 536.16px;
